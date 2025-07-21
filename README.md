@@ -1,5 +1,5 @@
 # Full-Stack-Grocery-List-Tracker
-![Demo](demo.gif)
+![Demo](https://github.com/XerXX9/Full-Stack-Grocery-List-Tracker/blob/main/Demo.gif)
 ![Screenshot](image.png)
 
 A simple, full-stack web application I built as my **first full-stack project**, designed to understand and implement every component myself using industry-standard practices.
