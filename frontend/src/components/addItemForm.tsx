@@ -18,13 +18,15 @@ export default function AddItemForm({ onAddItem }: AddItemFormprops) {
 
     return (
         <Box component="form" onSubmit={handleSubmit}>
-            <Paper sx={{
-                display: 'flex'
+            <Box sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 2
             }}>
-                <TextField label="Item Name" value={itemName} onChange={(e) => setItemName(e.target.value)}></TextField>
-                <TextField label="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}></TextField>
-                <Button type='submit'>Add Item</Button>
-            </Paper>
+                <TextField variant="filled" label="Item Name" value={itemName} onChange={(e) => setItemName(e.target.value)}></TextField>
+                <TextField variant="filled" label="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}></TextField>
+                <Button type='submit' sx={{marginLeft: 'auto', marginRight: 2}}>Add Item</Button>
+            </Box>
 
 
         </Box>

@@ -1,5 +1,5 @@
 import { type Item } from "../api/itemService";
-import { List, ListItem, ListItemText, IconButton, TextField, Button } from '@mui/material';
+import { List, ListItem, ListItemText, IconButton, TextField, Button, Box, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useEffect, useState } from "react";
@@ -20,19 +20,19 @@ export default function ItemList({ items, onDeleteItem, onSetEditMode, editingIt
         if (editingItemId) {
             onUpdateItem(editingItemId, { name: updatedName, quantity: Number(updatedQuantity) });
         }
-        
+
     }
 
     useEffect(() => {
-    if (editingItemId !== null) {
-        const itemToEdit = items.find(item => item.id === editingItemId);
+        if (editingItemId !== null) {
+            const itemToEdit = items.find(item => item.id === editingItemId);
 
-        if (itemToEdit) {
-            setUpdatedName(itemToEdit.name);
-            setUpdatedQuantity(String(itemToEdit.quantity)); 
+            if (itemToEdit) {
+                setUpdatedName(itemToEdit.name);
+                setUpdatedQuantity(String(itemToEdit.quantity));
+            }
         }
-    }
-}, [editingItemId, items]);
+    }, [editingItemId, items]);
 
     return (
         <List>
@@ -41,6 +41,7 @@ export default function ItemList({ items, onDeleteItem, onSetEditMode, editingIt
                 return (
                     <ListItem
                         key={item.id}
+                        disablePadding
                         secondaryAction={
                             <>
                                 <IconButton onClick={() => onSetEditMode(item.id)}>
@@ -53,15 +54,19 @@ export default function ItemList({ items, onDeleteItem, onSetEditMode, editingIt
                         }
                     >
                         {isEditing ? (
-                            <>
-                                <TextField label='Item Name' value={updatedName} onChange={(e) => setUpdatedName(e.target.value)}></TextField>
-                                <TextField label="Quantity" value={updatedQuantity} onChange={(e) => setUpdatedQuantity(e.target.value)}></TextField>
-                                <Button onClick={handleUpdate}>Update Item</Button>
-                            </>
+                            <Box sx={{
+                                display: 'flex',
+                                gap: 2
+                            }}>
+                                <TextField variant="filled" label='Item Name' value={updatedName} onChange={(e) => setUpdatedName(e.target.value)}></TextField>
+                                <TextField variant="filled" label="Quantity" value={updatedQuantity} onChange={(e) => setUpdatedQuantity(e.target.value)}></TextField>
+                                <Button sx={{ marginLeft: 'auto', marginRight: 2 }} onClick={handleUpdate}>Update Item</Button>
+                            </Box>
                         ) : (
                             <ListItemText
                                 primary={item.name}
-                                secondary={item.quantity}
+                                secondary={`Qty: ${item.quantity}`}
+                                sx={{ paddingX: 2 }}
                             />
                         )}
                     </ListItem>
