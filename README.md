@@ -1,131 +1,110 @@
 # Basic Full Stack
 
-A simple, full-stack web application showcasing a **frontend** (e.g. React, Vue) and **backend** (Node.js/Express) connected to a database (e.g. MongoDB, PostgreSQL).
+A simple, full-stack web application I built as my **first full-stack project**, designed to understand and implement every component myself using industry-standard practices.
 
-## 🔧 Tech Stack
+##  Motivation
 
-- **Frontend**: React (or Vue, Angular), HTML, CSS  
-- **Backend**: Node.js, Express  
-- **Database**: MongoDB (or PostgreSQL, MySQL)  
-- **State Management / Authentication**: JWT, Redux (if applicable)  
-- **Other Tools**: Webpack/Vite, Babel, ESLint, Prettier
+This project was my **first full-stack app**. I specifically picked a small-scope project so I could **learn every part in depth**. Rather than follow YouTube tutorials, I asked ChatGPT to suggest the tech stack, then dove into the **official docs** for React/MUI, Vite, FastAPI, PostgreSQL, and Pytest. I used their demo projects to kick things off and relied on GPT for debugging as I progressed. This was a **learning exercise** to grasp how all the pieces fit together and how to execute it in an industry standard manner.
 
-## 🚀 Features
+---
 
-- Full CRUD operations (Create, Read, Update, Delete)
-- User authentication (signup/login with JWT)
-- RESTful API design
-- Simple, responsive UI design
-- Error handling + form validation
+##  Tech Stack
 
-## 🧩 Folder Structure
+- **Frontend**: React + MUI, built with Vite  
+- **Backend**: FastAPI 
+- **Database**: PostgreSQL  
+- **Testing**: Pytest
+
+---
+
+##  Features
+
+- Modern UI with Material-UI components and responsive design
+- Backend API built with FastAPI
+- PostgreSQL database integration
+- Thorough testing with Pytest
+
+---
+
+##  File Structure
 
 ```
 basic-full-stack/
-├── backend/             # Server-side code
-│   ├── src/
-│   │   ├── controllers/  
-│   │   ├── models/       
-│   │   ├── routes/       
-│   │   └── app.js        
-│   └── package.json      
-├── frontend/            # Client-side code
-│   ├── src/
-│   │   ├── components/  
-│   │   ├── pages/       
-│   │   └── App.js       
-│   └── package.json      
-├── README.md           
-└── .gitignore          
+├── backend/
+│   ├── app/             # FastAPI application code
+│   ├── tests/           # Pytest test suite
+│   └── requirements.txt
+├── frontend/
+│   ├── src/             # React components, pages
+│   ├── public/
+│   └── package.json     # Includes MUI & Vite setup
+├── README.md
+└── .gitignore
 ```
 
-## 🔧 Installation & Setup
+---
+
+##  Installation & Setup
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18.x or later)
-- [MongoDB](https://www.mongodb.com/) (running locally or via Atlas)
+- Node.js  
+- Python 3.10+  
+- PostgreSQL
 
-### Steps
+```bash
+# Clone
+git clone https://github.com/XerXX9/Basic-Full-Stack.git
+cd Basic-Full-Stack
 
-1. **Clone the repo**  
-   ```bash
-   git clone https://github.com/XerXX9/Basic-Full-Stack.git
-   cd Basic-Full-Stack
-   ```
+# Backend
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
 
-2. **Start backend**  
-   ```bash
-   cd backend
-   npm install
-   npm run dev       # or npm start
-   ```
-
-3. **Start frontend**  
-   In a new shell:
-   ```bash
-   cd ../frontend
-   npm install
-   npm start
-   ```
-
-4. **Open app in browser**  
-   Visit: `http://localhost:3000` (or whichever port is configured)
-
-## 🛠 Environment Variables
-
-Create a `.env` file in the `backend/` folder with values like:
-
-```
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/mydb
-JWT_SECRET=your_jwt_secret_here
+# Frontend (in a new tab)
+cd ../frontend
+npm install
+npm run dev
 ```
 
-## 📦 Available Scripts
+The App should now be accessible locally (e.g., `http://localhost:5173`).
 
-### Backend
+---
 
-- `npm run dev` — Start server with hot reload (via nodemon)
-- `npm start` — Start production server
-- `npm test` — Run server tests (if included)
+##  Testing
 
-### Frontend
+```bash
+# Run backend tests
+cd backend
+pytest
+```
 
-- `npm start` — Launch development server
-- `npm run build` — Create production bundle
-- `npm test` — Run frontend tests (if included)
+---
 
-## 🧪 Testing
+##  What I Learned
 
-- **Backend**: unit/integration tests (e.g., Jest, supertest)
-- **Frontend**: component tests (React Testing Library or similar)
+- Building a backend API from scratch using FastAPI  
+- Structuring a database-driven app with PostgreSQL  
+- Crafting polished UI components with React and MUI  
+- Bootstrapping a modern front-end workflow with Vite  
+- Writing and organizing tests using Pytest  
+- Debugging through static types, docs, and GPT support
 
-## 📁 API Endpoints
+---
 
-| Method | Endpoint             | Description              |
-|--------|----------------------|--------------------------|
-| GET    | `/api/items`         | Retrieve all items       |
-| POST   | `/api/items`         | Add a new item           |
-| GET    | `/api/items/:id`     | Retrieve single item     |
-| PUT    | `/api/items/:id`     | Update existing item     |
-| DELETE | `/api/items/:id`     | Delete item              |
+##  Thank You
 
-## 🧠 Project Roadmap
+Huge thanks to **[Sebastián Ramírez](https://twitter.com/tiangolo)** — the creator of FastAPI and SQLModel — for his **exceptionally clear, concise, and helpful documentation**. The quality of the docs made it not only possible but enjoyable to build with these tools, especially as a first-timer.
 
-- ✅ Basic CRUD (frontend + backend)
-- ✅ Implement authentication (JWT)
+---
 
-## 🤝 Contributing
+##  Contributing
 
-Contributions are welcome!
+This was a solo learning effort, but feel free to fork it and expand!
 
-1. Fork the repo  
-2. Create a feature branch (`git checkout -b my-feature`)  
-3. Commit changes (`git commit -m "Add awesome feature"`)  
-4. Push (`git push origin my-feature`)  
-5. Open a Pull Request
+---
 
-## 📃 License
+##  License
 
-This project is licensed under the **MIT License** — see the `LICENSE` file for details.
+[MIT License](./LICENSE)
