@@ -1,5 +1,5 @@
 import { type Item } from "../api/itemService";
-import { List, ListItem, ListItemText, IconButton, TextField, Button, Box, Typography } from '@mui/material';
+import { List, ListItem, ListItemText, IconButton, TextField, Button, Box} from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useEffect, useState } from "react";
