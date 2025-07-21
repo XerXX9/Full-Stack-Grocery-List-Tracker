@@ -16,11 +16,11 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 origins = [
-    "http://localhost:5173",
     "https://full-stack-grocery-list-tracker-wt2v-6c12iauja.vercel.app",
     "https://full-stack-grocery-list-tracker-wt2.vercel.app/",
     "https://full-stack-grocery-list-tracker.vercel.app/,"
-    "https://full-stack-grocery-list-tracker-ap1vqiz0x.vercel.app"
+    "https://full-stack-grocery-list-tracker-ap1vqiz0x.vercel.app",
+    "https://full-stack-grocery-list-tracker.vercel.app"
 ]
 
 app.add_middleware(
