@@ -15,7 +15,7 @@ export interface ItemUpdatePayload {
     quantity?: number;
 }
 
-const apiClient = axios.create({
+const apiClient = axios.create({ 
   baseURL: 'http://localhost:8000',
   headers: {
     'Content-Type': 'application/json',
@@ -28,9 +28,9 @@ export const getItems = async (): Promise<Item[]> => {
 }
 
 export const postItem = async (itemData: ItemCreate): Promise<Item> => {
-    const response = await apiClient.post("/items/", itemData);
-    return response.data;
-}
+  const response = await apiClient.post("/items/", itemData);
+  return response.data;
+};
 
 export const putItem = async (id: number, itemData: ItemUpdatePayload): Promise<Item> => {
   const response = await apiClient.put(`/items/${id}`, itemData);

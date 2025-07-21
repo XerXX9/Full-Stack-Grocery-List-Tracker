@@ -1,17 +1,19 @@
-import { Box, Container, Typography } from '@mui/material';
+import Home from './pages/Home';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
-export default function Home() {
-    return (
-        <Box sx={{
-            display: 'flex',
-            pt: 8
-        }}>
-            <Container>
-                <Typography variant='h2' align='center'>Welcome to your personal Grocery List</Typography>
-            </Container>
-        </Box>
-            
-        
-        
-    );
+const theme = createTheme({
+  palette: {
+    mode: 'dark', 
+  },
+});
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline /> 
+      <Home />     
+    </ThemeProvider>
+  )
 }
+
+export default App
