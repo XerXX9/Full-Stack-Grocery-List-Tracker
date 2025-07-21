@@ -32,7 +32,7 @@ export default function Home() {
 
     async function handleDeleteItem(id: number) {
 
-        const response = await deleteItem(id);
+        await deleteItem(id);
         setItems(items.filter(item => item.id !== id));
     }
 
