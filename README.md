@@ -115,9 +115,6 @@ JWT_SECRET=your_jwt_secret_here
 
 - ✅ Basic CRUD (frontend + backend)
 - ✅ Implement authentication (JWT)
-- 🔜 Add image upload (e.g. Cloudinary)
-- 🔜 Improve UI/UX and mobile styling
-- 🔜 Add unit & E2E testing
 
 ## 🤝 Contributing
 
