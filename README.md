@@ -1,4 +1,4 @@
-# Basic Full Stack
+# Full-Stack-Grocery-List-Tracker
 
 A simple, full-stack web application I built as my **first full-stack project**, designed to understand and implement every component myself using industry-standard practices.
 
