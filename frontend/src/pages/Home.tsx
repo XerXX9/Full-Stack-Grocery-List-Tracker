@@ -54,6 +54,9 @@ export default function Home() {
                     <Typography variant='h2' align='center'>
                         Welcome to your personal Grocery List
                     </Typography>
+                    <Typography variant='h3' align='center'>
+                        Please wait 3 minutes so that the backed server can spin up. (This is not an issue with the website, im using the free tier of Render which causes the backend to go offline after some inactivity)
+                    </Typography>
                 </Container>
 
             <Paper sx={{
