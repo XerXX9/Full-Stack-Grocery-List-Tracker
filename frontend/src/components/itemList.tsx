@@ -35,7 +35,9 @@ export default function ItemList({ items, onDeleteItem, onSetEditMode, editingIt
     }, [editingItemId, items]);
 
     return (
-        <List>
+        <List sx={{
+            pt: 2
+        }}>
             {items.map(item => {
                 const isEditing = editingItemId === item.id;
                 return (
