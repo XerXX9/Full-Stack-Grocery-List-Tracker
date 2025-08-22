@@ -1,6 +1,10 @@
 import axios from 'axios';
 const API_BASE = import.meta.env.VITE_API_URL;
 
+console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
+console.log('MODE:', import.meta.env.MODE);
+
+
 export interface Item {
   id: number;
   name: string;
